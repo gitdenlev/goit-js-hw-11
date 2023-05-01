@@ -149,5 +149,3 @@ function notification(length, totalHits) {
     );
   }
 }
-
-// Діма Берестень
