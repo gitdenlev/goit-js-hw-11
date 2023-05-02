@@ -140,6 +140,12 @@ function notification(length, totalHits) {
     Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
   }
 
+  if (page === 2) {
+    refs.btnLoadMore.style.display = 'none';
+    refs.btnLoadMore.style.opacity = '0';
+    refs.btnLoadMore.style.overflow = 'hidden';
+  }
+
   if (length < 40) {
     refs.btnLoadMore.style.display = 'none'; // ховаємо кнопку loadMore
 
