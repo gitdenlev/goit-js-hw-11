@@ -45,6 +45,9 @@ function onBtnLoadMore() {
   const name = refs.input.value.trim();
   page += 1; // додаємо +1 сторінку яка має +40 картинок
   pixabay(name, page); // завантаження зображень
+
+
+ 
 }
 
 // отримання зображень
@@ -60,7 +63,7 @@ async function pixabay(name, page) {
       orientation: 'horizontal',
       safesearch: 'true',
       page: page,
-      per_page: 40,
+      per_page: 40, 
     },
   };
 
@@ -133,18 +136,14 @@ function notification(length, totalHits) {
     return;
   }
 
-  if (page === 1) {
+  if (page ===  1) {
     refs.btnLoadMore.style.display = 'flex'; // показуємо кнопку loadMore
 
     // вивести повідомлення про кількість знайдених зобрежнь
     Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
   }
 
-  if (page === 2) {
-    refs.btnLoadMore.style.display = 'none';
-    refs.btnLoadMore.style.opacity = '0';
-    refs.btnLoadMore.style.overflow = 'hidden';
-  }
+
 
   if (length < 40) {
     refs.btnLoadMore.style.display = 'none'; // ховаємо кнопку loadMore
